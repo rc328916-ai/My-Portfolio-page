@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohan Chaudhary – Innovation & Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a0a0a url("https://uploads.onecompiler.io/447xwcamt/44ctc88bs/23239.jpg") no-repeat center center fixed; /* ← Replace this URL with your actual wall art image URL */
+      background-size: cover;
+      color: #e0e0e0;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Strong dark overlay to make artistic background subtle & text readable */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 20, 0.82); /* Deep navy-black tint – try 0.78–0.88 for balance */
+      z-index: -2;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 5vw;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 40px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #ff6b00;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 5rem;
+      padding: 6rem 0 4rem;
+    }
+
+    .left {
+      padding-right: 3rem;
+    }
+
+    .overline {
+      display: inline-block;
+      height: 4px;
+      width: 100px;      background: #ff6b00;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(5rem, 10vw, 11rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.8rem;
+      color:#ffffff;
+    }
+
+    .tagline {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #cccccc;
+      margin-bottom: 3rem;
+    }
+
+    .about-text {
+      font-size: 1.18rem;
+      max-width: 620px;
+      color: #dddddd;
+    }
+
+    .about-text p {
+      margin-bottom: 1.6rem;
+    }
+    
+    
+    .intro{
+      color:#f4f4f4;
+    }
+
+    .right {
+      position: relative;
+    }
+
+    .photo-frame {
+      border-radius: 9px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,107,0,0.15);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .accent-dot {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 60px;
+      height: 60px;
+      background: #ff6b00;
+      border-radius: 50%;
+      opacity: 0.7;
+      z-index: -1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 8rem 0 6rem;
+      }
+
+      .left {
+        padding-right: 0;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 12vw, 8rem);
+      }
+
+      .photo-frame {
+        max-width: 500px;
+        margin: 4rem auto 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+
+  
+  
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+
+        /* Header */
+        .speaker-hero {
+            color: white;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        .hero-text h1 { font-size: 3.5rem; margin-bottom: 10px; color: #f39c12; }
+        .hero-text p { font-size: 1.4rem; opacity: 0.8; max-width: 600px; }
+
+        /* Stats Bar */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            color:#f39c12;
+            text-align: center;
+        }
+        .stat-item h2 { font-size: 2.5rem; }
+
+        /* Topics Section */
+        .ficture { padding: 80px 10%; text-align: center; color:#f4f4f4;}
+        .ficture h2 { font-size: 2.5rem; margin-bottom: 40px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .ficture-card {
+            padding: 40px;
+            border-radius: 9px;
+            border-left: 9px solid #f39c12;
+            transition: 0.3s;
+            text-align: left;
+        }
+        .ficture-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); color:#f4f4f4;}
+
+        /* Contact CTA */
+        .book-me {
+            text-align: center;
+            padding: 80px 10%;
+            color:#f4f4f4;
+            
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background:#f39c12;
+            color:#f4f4f4;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        
+        
+        
+        
+        
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container-info {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .contact-wrapper {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-info {
+      /* Changed to your requested color */
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+      color: white;
+      padding: 60px 40px;
+    }
+
+    .contact-info h2 { font-size: 2.2rem; margin-bottom: 24px; }
+    .info-item { margin-bottom: 32px; }
+    .info-item h3 { font-size: 1.2rem; margin-bottom: 8px; opacity: 0.95; }
+    .info-item p { font-size: 1.05rem; opacity: 0.92; }
+
+    .social-links {
+      margin-top: 40px;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.7rem;
+      margin-right: 22px;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      padding: 60px 40px;
+    }
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: #2d3748;
+    }
+
+    .form-group { margin-bottom: 24px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #4a5568;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #f39c12;
+      box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.25);
+    }
+
+    textarea { min-height: 140px; resize: vertical; }
+
+    .btn-submit {
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.35);
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .contact-info, .contact-form { padding: 50px 30px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">R<span>O</span>H<span>A</span>N<span> <br>C</span>H<span>A</span>U<span>D<span>H</span>A</span>R<span>Y</span></div>
+      <nav>
+        <ul>
+          <li><a href="Home.html" class="active">HOME</a></li>
+          <li><a href="About.html">ABOUT</a></li>
+          <li><a href="Project.html">PROJECTS</a></li>
+          <li><a href="Publication.html">PUBLICATIONS</a></li>
+          <li><a href="Speaking.html">SPEAKING</a></li>
+          <li><a href="Blog.html">BLOG</a></li>
+          <li><a href="Contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <div class="overline"></div>
+        <h1>ABOUT.</h1>
+        
+        <div class="tagline">
+          Passionate about innovation. Driven by real-world impact.
+        </div>
+
+        <div class="about-text">
+          <p>I really enjoy working on newly projects and developing enabling new technologies,i will be really to be happt this and i also for lot of this world ...
+          so, it'it's will be it'rit'really good for my world</p>
+          
+          <p>I also love being surrounded by brilliant people who share the vision of “technology for good”. I’m truly happy by there surrounding .I’m excited by the ever-growing challenges I face as my career for brilliant in science.</p>
+        </div>
+        <div class="intro">
+           <h4>Introduction</h4><!--it's my introduction inside about page -->
+          <h4>
+          <p>
+            I'm a web and graphic designer ,and also will be a 
+            programmer .
+            <br>
+                 I'm a sutdent an study in the college inside engineering of the computer science .
+            <br>
+            SO, I will inside a programmer world.
+            </h4>
+            
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="photo-frame">
+          <!-- Replace src with YOUR OWN headshot photo URL (upload to Imgur/Cloudinary/etc.) -->
+          <img src="https://uploads.onecompiler.io/447xwcamt/44ctc88bs/23242.jpg"
+               alt="Rohan Chaudhary– professional headshot">
+        </div>
+        <div class="accent-dot"></div>
+      </div>
+    </section>
+    
+
+
+    <section class="speaker-hero">
+        <div class="hero-text">
+            <h1>ART OF SPEAKS.</h1>
+            <p>Inspiring audiences worldwide with insights on technology, leadership, and the future of innovation to developed by more fast.</p>
+        </div>
+        <div style="width: 300px; height: 300px; background: #33; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 5px solid #f39c12;">
+            <span style="font-size: 100px;">🎙️</span>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-item"><h2>16+</h2><p>college assignments</p></div>
+        <div class="stat-item"><h2>100+</h2><p>People Reached</p></div>
+        <div class="stat-item"><h2>12</h2><p>perfect designed</p></div>
+    </div>
+
+    <section class="ficture">
+        <h2>Key Ficture </h2>
+        <div class="grid">
+            <div class="ficture-card">
+                <h3>The AI </h3>
+                <p>The artificial intelligence is use full for work .</p>
+            </div>
+            <div class="ficture-card">
+                <h3>Resilient Leadership</h3>
+                <p>Building teams that can withstand any market shift or global challenge and improve yourself.</p>
+            </div> 
+            <div class="ficture-card">
+                <h3>Future-Proofing Your Brand</h3>
+                <p>Strategies to stay relevant in an ever-changing digital landscape and improve yourself .</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-me">
+        <h2>Interested in booking me for your next event?</h2>
+        <p>Let's create something unforgettable together.</p>
+        <a href="rc328916@gmail.com" class="cta-button">Inquire Availability</a>
+    </section>
+    
+    
+
+  <div class="container-info">
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        
+        <div class="info-item">
+          <h3>Address</h3>
+          <p>Kathmandu, Nepal</p>
+        </div>
+
+        <div class="info-item">
+          <h3>Email</h3>
+          <p>rc328916@gmail.com</p>
+        </div>
+
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p>+977 9700930481</p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/17tc5y8gfm/">FB</a>
+          <a href="https://www.instagram.com/7____rhn_?igsh=MWk2Nng5dG02aWdwbA==">IG</a>
+          <a href="#">TW</a>
+          <a href="#">LI</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send us a Message</h2>
+
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
